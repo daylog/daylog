@@ -1,0 +1,43 @@
+{
+  "name": "daylog",
+  "version": "0.0.0",
+  "description": "write notes daily",
+  "main": "index.js",
+  "bin": {
+    "daylog": "bin/index.js"
+  },
+  "scripts": {
+    "test": "node tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daylog/daylog.git"
+  },
+  "keywords": [
+    "notes",
+    "notetaking",
+    "journal"
+  ],
+  "author": "sethvincent <sethvincent@gmail.com> (https://sethvincent.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daylog/daylog/issues"
+  },
+  "homepage": "https://github.com/daylog/daylog#readme",
+  "devDependencies": {
+    "documentation": "^8.0.0",
+    "standard": "^11.0.1",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "assert-argument": "^1.0.2",
+    "configuration-store": "^1.0.1",
+    "date-fns": "^1.29.0",
+    "directory-command": "^1.0.1",
+    "handlebars": "^4.0.11",
+    "mkdirp": "^0.5.1",
+    "months": "^2.0.0",
+    "open-in-editor": "^2.2.0",
+    "zero-fill": "^2.2.3"
+  }
+}
