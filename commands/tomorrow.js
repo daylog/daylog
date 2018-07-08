@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
 const openInEditor = require('open-in-editor')
+const addDays = require('date-fns/add_days')
 
 const getDay = require('../lib/get-day')
 const getMonth = require('../lib/get-month')
@@ -11,7 +12,7 @@ const config = require('../lib/config')
 
 function command (args, flags, context) {
   const date = new Date()
-  const day = getDay(null, date)
+  const day = getDay(null, addDays(date, 1))
   const month = getMonth(null, date)
   const year = getYear(null, date)
 
@@ -20,7 +21,7 @@ function command (args, flags, context) {
     month,
     year
   })
-
+console.log(day, month, year)
   const monthDirectoryPath = path.join(process.cwd(), year.number, month.directoryName)
   const dayFilepath = path.join(monthDirectoryPath, day.filename)
 
