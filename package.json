@@ -1,6 +1,6 @@
 {
   "name": "daylog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "write notes daily",
   "main": "index.js",
   "bin": {
