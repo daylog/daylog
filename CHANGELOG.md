@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## Unreleased
 
-* ???
+### Changed
+
+- changed root command to be the same thing as `daylog help` (which is unimplemented so far)
+
+### Added
+
+- added first draft of `daylog build` command
 
 ## v1.1.0
 
@@ -17,4 +23,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## v1.0.0
 
 ### Added
-* initial release with `day`, `month`, `year`, and `today` commands.
+- initial release with `day`, `month`, `year`, and `today` commands.

@@ -4,3 +4,4 @@ tmp
 *.log*
 example-notes
 package-lock.json
+dist

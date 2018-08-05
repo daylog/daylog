@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/daylog/daylog#readme",
   "devDependencies": {
-    "documentation": "^8.0.0",
+    "documentation": "^8.1.0",
     "standard": "^11.0.1",
     "tape": "^4.9.1"
   },
@@ -33,11 +33,18 @@
     "assert-argument": "^1.0.2",
     "configuration-store": "^1.0.1",
     "date-fns": "^1.29.0",
-    "directory-command": "^1.0.1",
+    "directory-command": "^2.0.0",
+    "folder-reader": "^2.0.0",
+    "front-matter": "^2.3.0",
     "handlebars": "^4.0.11",
     "mkdirp": "^0.5.1",
     "months": "^2.0.0",
     "open-in-editor": "^2.2.0",
+    "pump": "^3.0.0",
+    "remark": "^9.0.0",
+    "remark-html": "^7.0.0",
+    "through2": "^2.0.3",
+    "unist-util-visit": "^1.4.0",
     "zero-fill": "^2.2.3"
   }
 }
