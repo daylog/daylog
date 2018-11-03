@@ -6,13 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Removed
+- `today` and `tomorrow` commands
+
 ### Changed
 
-- changed root command to be the same thing as `daylog help` (which is unimplemented so far)
+- automatic help text using directory-command
+- changed root command to show help text
 
 ### Added
 
 - added first draft of `daylog build` command
+- updated dependencies
 
 ## [v1.1.0] - 2018-07-07
 

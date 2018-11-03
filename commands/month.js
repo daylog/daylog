@@ -8,13 +8,10 @@ const createMonthFile = require('../lib/create-month-file')
 
 function command (args, flags, context) {
   const date = new Date()
-  const month = getMonth(args[0], date)
-  const year = getYear(args[1], date)
+  const month = getMonth(args.month, date)
+  const year = getYear(args.string, date)
 
-  const monthReadmeFile = createMonthFile({
-    month,
-    year
-  })
+  const monthReadmeFile = createMonthFile({ month, year })
 
   const monthDirectoryPath = path.join(process.cwd(), year.number, month.directoryName)
   const monthReadmeFilepath = path.join(monthDirectoryPath, 'README.md')
@@ -22,15 +19,29 @@ function command (args, flags, context) {
   mkdirp.sync(monthDirectoryPath)
 
   try {
-    fs.accessSync(monthReadmeFilepath);
+    fs.accessSync(monthReadmeFilepath)
   } catch (e) {
     fs.writeFileSync(monthReadmeFilepath, monthReadmeFile)
   }
 }
 
-const options = []
+const args = [
+  {
+    name: 'month',
+    type: 'string'
+  },
+  {
+    name: 'year',
+    type: 'string'
+  }
+]
+
+const options = {
+  description: 'create a new file for a month'
+}
 
 module.exports = {
   command,
+  args,
   options
 }

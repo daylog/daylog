@@ -9,9 +9,9 @@ const createDayFile = require('../lib/create-day-file')
 
 function command (args, flags, context) {
   const date = new Date()
-  const day = getDay(args[0], date)
-  const month = getMonth(args[1], date)
-  const year = getYear(args[2], date)
+  const day = getDay(args.day, date)
+  const month = getMonth(args.month, date)
+  const year = getYear(args.year, date)
 
   const dayFile = createDayFile({
     day,
@@ -25,15 +25,33 @@ function command (args, flags, context) {
   mkdirp.sync(monthDirectoryPath)
 
   try {
-    fs.accessSync(dayFilepath);
+    fs.accessSync(dayFilepath)
   } catch (e) {
     fs.writeFileSync(dayFilepath, dayFile)
   }
 }
 
-const options = []
+const args = [
+  {
+    name: 'day',
+    type: 'string'
+  },
+  {
+    name: 'month',
+    type: 'string'
+  },
+  {
+    name: 'year',
+    type: 'string'
+  }
+]
+
+const options = {
+  description: 'create a new file for a day'
+}
 
 module.exports = {
   command,
+  args,
   options
 }

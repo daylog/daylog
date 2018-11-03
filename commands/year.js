@@ -7,7 +7,7 @@ const createYearFile = require('../lib/create-year-file')
 
 function command (args, flags, context) {
   const date = new Date()
-  const year = getYear(args[0], date)
+  const year = getYear(args.year, date)
 
   const yearReadmeFile = createYearFile({ year })
 
@@ -17,15 +17,25 @@ function command (args, flags, context) {
   mkdirp.sync(yearDirectoryPath)
 
   try {
-    fs.accessSync(yearReadmeFilepath);
+    fs.accessSync(yearReadmeFilepath)
   } catch (e) {
     fs.writeFileSync(yearReadmeFilepath, yearReadmeFile)
   }
 }
 
-const options = []
+const args = [
+  {
+    name: 'year',
+    type: 'string'
+  }
+]
+
+const options = {
+  description: 'create a new file for a year'
+}
 
 module.exports = {
   command,
+  args,
   options
 }

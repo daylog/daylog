@@ -1,42 +1,55 @@
-const fs = require('fs')
-const path = require('path')
 const assert = require('assert')
 const mkdirp = require('mkdirp')
 const pump = require('pump')
+const reader = require('folder-reader')
 
-const readFiles = require('../lib/read-files')
+const transformFiles = require('../lib/transform-files')
 const writeFiles = require('../lib/write-files')
 
 function command (args, flags, context) {
+  const { notesDirectory } = args
   const { format, output } = flags
+
   assert(output && typeof output === 'string', '--output directory path is required')
-  const notesDirectory = args[0] || process.cwd()
+
   mkdirp(output, (err) => {
     if (err) return console.error(err)
-    pump(readFiles(notesDirectory), writeFiles({ format, output }), (err) => {
+    pump(reader(notesDirectory), transformFiles(), writeFiles({ format, output }), (err) => {
       if (err) console.error(err)
     })
   })
 }
 
-const options = [
+const args = [
   {
-    name: 'format',
-    boolean: false,
-    default: 'html',
-    abbr: 'f',
-    help: 'format for output'
-  },
-  {
-    name: 'output',
-    boolean: false,
-    default: null,
-    abbr: 'o',
-    help: 'output directory for files (required)'
+    name: 'notesDirectory',
+    type: 'string',
+    default: process.cwd()
   }
 ]
 
+const flags = [
+  {
+    name: 'format',
+    alias: 'f',
+    type: 'string',
+    default: 'html',
+    description: 'format for output'
+  },
+  {
+    name: 'output',
+    alias: 'o',
+    description: 'output directory for files (required)'
+  }
+]
+
+const options = {
+  description: 'create an html or json build of a daylog project'
+}
+
 module.exports = {
   command,
+  flags,
+  args,
   options
 }

@@ -44,10 +44,10 @@ mkdir ~/notes
 cd ~/notes
 ```
 
-Create a notes file for today and open it in your favorite editor:
+Create a notes file for the current day:
 
 ```
-daylog today -e atom
+daylog day
 ```
 
 ### Additional commands
