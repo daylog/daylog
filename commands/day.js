@@ -34,15 +34,14 @@ function command (args, flags, context) {
 const args = [
   {
     name: 'day',
-    type: 'string'
+    type: 'integer'
   },
   {
-    name: 'month',
-    type: 'string'
+    name: 'month'
   },
   {
     name: 'year',
-    type: 'string'
+    type: 'integer'
   }
 ]
 

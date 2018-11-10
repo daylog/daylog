@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - _nothing yet_
 
+## [v2.0.1] - 2018-11-10
+
+### Fixed
+- Fixed types in args
+
 ## [v2.0.0] - 2018-11-03
 
 ### Removed
@@ -33,7 +38,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - initial release with `day`, `month`, `year`, and `today` commands.
 
-[Unreleased]: https://github.com/daylog/daylog/compare/v2.0.0...master
+[Unreleased]: https://github.com/daylog/daylog/compare/v2.0.1...master
+[v2.0.1]: https://github.com/daylog/daylog/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/daylog/daylog/compare/v1.1.0...v2.0.0
 [v1.1.0]: https://github.com/daylog/daylog/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/daylog/daylog/compare/v1.0.0

@@ -27,12 +27,11 @@ function command (args, flags, context) {
 
 const args = [
   {
-    name: 'month',
-    type: 'string'
+    name: 'month'
   },
   {
     name: 'year',
-    type: 'string'
+    type: 'integer'
   }
 ]
 

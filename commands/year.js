@@ -26,7 +26,7 @@ function command (args, flags, context) {
 const args = [
   {
     name: 'year',
-    type: 'string'
+    type: 'integer'
   }
 ]
 
