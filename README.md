@@ -1,4 +1,4 @@
-# daylog
+# ☀️📝 daylog
 
 [![npm][npm-image]][npm-url]
 [![standard][standard-image]][standard-url]
@@ -17,7 +17,7 @@ Write daily notes in markdown files with the help of a commandline tool.
 
 `daylog` creates a directory structure that looks like:
 
-```
+```console
 notes
 ├── 2018
 │   ├── 01-january
@@ -27,11 +27,15 @@ notes
 ...
 │   │   ├── 31.md
 │   │   ├── README.md
+│   ├── quarters
+│   ├── sprints
+│   ├── weeks
+│   ├── README.md
 ```
 
 ## Install
 
-```sh
+```console
 npm i -g daylog
 ```
 
@@ -39,43 +43,39 @@ npm i -g daylog
 
 Create a directory for your notes:
 
-```
+```console
 mkdir ~/notes
 cd ~/notes
 ```
 
 Create a notes file for the current day:
 
-```
+```console
 daylog day
 ```
 
-### Additional commands
+You'll find a new file at `~/notes/2018/11-november/17.md`, with the current date instead of this example.
 
-> arguments in brackets default to the current date.
+### Commands
 
-#### day
+```console
+daylog 
 
-Create a day file. Creates current day by default.
+Usage:
+  daylog
 
-```
-daylog day {dayNumberOfMonth} {month} {year}
-```
+Subcommands:
+  daylog build                          create an html or json build of a daylog
+                                        project
+  daylog day                            create a new file for a day
+  daylog month                          create a new file for a month
+  daylog quarter                        create a new file for a quarter
+  daylog sprint                         create a new file for a two week sprint
+  daylog week                           create a new file for a week of the year
+  daylog year                           create a new file for a year
 
-#### month
-
-Create a month directory and a README.md file in that directory. Creates current month by default.
-
-```
-daylog month {month} {year}
-```
-
-#### year
-
-Create a year directory and a README.md file in that directory. Creates current year by default.
-
-```
-daylog year {year}
+See help for subcommands:
+  daylog [command] --help
 ```
 
 ## Contributing
