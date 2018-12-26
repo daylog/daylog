@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - _nothing yet_
 
+## [v2.2.0] - 2018-12-26
+
+### Added
+- added `--next` and `--last` flags to day, week, month, quarter, and sprint commands
+
 ## [v2.1.0] - 2018-11-17
 
 ### Added
@@ -44,6 +49,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - initial release with `day`, `month`, `year`, and `today` commands.
 
+[v2.2.0]: https://github.com/daylog/daylog/compare/v2.1.0...v2.2.0
 [v2.1.0]: https://github.com/daylog/daylog/compare/v2.0.1...v2.1.0
 [v2.0.1]: https://github.com/daylog/daylog/compare/v2.0.0...v2.0.1
 [v2.0.0]: https://github.com/daylog/daylog/compare/v1.1.0...v2.0.0

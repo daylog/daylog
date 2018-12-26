@@ -1,13 +1,22 @@
 const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
+const subWeeks = require('date-fns/sub_weeks')
+const addWeeks = require('date-fns/add_weeks')
 
 const getYear = require('../lib/get-year')
 const getWeek = require('../lib/get-week')
 const createWeekFile = require('../lib/create-week-file')
 
 function command (args, flags, context) {
-  const date = new Date()
+  let date = new Date()
+
+  if (flags.next) {
+    date = addWeeks(date, 1)
+  } else if (flags.last) {
+    date = subWeeks(date, 1)
+  }
+
   const year = getYear(args.year, date)
   const week = getWeek(args.week, date)
 
@@ -36,6 +45,21 @@ const args = [
   }
 ]
 
+const flags = [
+  {
+    name: 'next',
+    alias: 'n',
+    type: 'boolean',
+    default: false
+  },
+  {
+    name: 'last',
+    alias: 'l',
+    type: 'boolean',
+    default: false
+  }
+]
+
 const options = {
   description: 'create a new file for a week of the year',
   examples: [
@@ -53,5 +77,6 @@ const options = {
 module.exports = {
   command,
   args,
+  flags,
   options
 }

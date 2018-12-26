@@ -4,12 +4,23 @@ const mkdirp = require('mkdirp')
 
 const getYear = require('../lib/get-year')
 const getSprint = require('../lib/get-sprint')
+const subSprints = require('date-fns/sub_sprints')
+const addSprints = require('date-fns/add_sprints')
 const createSprintFile = require('../lib/create-sprint-file')
 
 function command (args, flags, context) {
-  const date = new Date()
+  let date = new Date()
+  let sprint = getSprint(args.sprint, date)
+
+  if (flags.next) {
+    sprint = addSprints(sprint, 1)
+    date = sprint.start
+  } else if (flags.last) {
+    sprint = subSprints(sprint, 1)
+    date = sprint.start
+  }
+
   const year = getYear(args.year, date)
-  const sprint = getSprint(args.sprint, date)
 
   const sprintFile = createSprintFile({ sprint, year })
 
@@ -36,6 +47,21 @@ const args = [
   }
 ]
 
+const flags = [
+  {
+    name: 'next',
+    alias: 'n',
+    type: 'boolean',
+    default: false
+  },
+  {
+    name: 'last',
+    alias: 'l',
+    type: 'boolean',
+    default: false
+  }
+]
+
 const options = {
   description: 'create a new file for a two week sprint',
   examples: [
@@ -53,5 +79,6 @@ const options = {
 module.exports = {
   command,
   args,
+  flags,
   options
 }

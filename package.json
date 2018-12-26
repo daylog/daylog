@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "standard",
-    "test": "node tests/*.js"
+    "test": "tape tests/*.js",
+    "test-lint": "npm test && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -26,14 +27,14 @@
   },
   "homepage": "https://github.com/daylog/daylog#readme",
   "devDependencies": {
-    "documentation": "^8.1.2",
+    "documentation": "^9.1.1",
     "standard": "^12.0.1",
     "tape": "^4.9.1"
   },
   "dependencies": {
     "assert-argument": "^1.1.0",
     "configuration-store": "^1.0.1",
-    "date-fns": "^1.29.0",
+    "date-fns": "^1.30.1",
     "directory-command": "^4.1.1",
     "folder-reader": "^2.0.0",
     "front-matter": "^3.0.1",
@@ -42,10 +43,9 @@
     "months": "^2.0.0",
     "pump": "^3.0.0",
     "remark": "^10.0.1",
-    "remark-html": "^8.0.0",
+    "remark-html": "^9.0.0",
     "through2": "^3.0.0",
     "unist-util-visit": "^1.4.0",
-    "week": "^0.2.0",
     "zero-fill": "^2.2.3"
   }
 }

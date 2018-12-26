@@ -1,13 +1,22 @@
 const fs = require('fs')
 const path = require('path')
 const mkdirp = require('mkdirp')
+const subQuarters = require('date-fns/sub_quarters')
+const addQuarters = require('date-fns/add_quarters')
 
 const getYear = require('../lib/get-year')
 const getQuarter = require('../lib/get-quarter')
 const createQuarterFile = require('../lib/create-quarter-file')
 
 function command (args, flags, context) {
-  const date = new Date()
+  let date = new Date()
+
+  if (flags.next) {
+    date = addQuarters(date, 1)
+  } else if (flags.last) {
+    date = subQuarters(date, 1)
+  }
+
   const year = getYear(args.year, date)
   const quarter = getQuarter(args.quarter, date)
 
@@ -35,6 +44,8 @@ const args = [
   }
 ]
 
+const flags = []
+
 const options = {
   description: 'create a new file for a quarter',
   examples: [
@@ -52,5 +63,6 @@ const options = {
 module.exports = {
   command,
   args,
+  flags,
   options
 }

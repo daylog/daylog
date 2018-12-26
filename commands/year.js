@@ -30,6 +30,8 @@ const args = [
   }
 ]
 
+const flags = []
+
 const options = {
   description: 'create a new file for a year'
 }
@@ -37,5 +39,6 @@ const options = {
 module.exports = {
   command,
   args,
+  flags,
   options
 }
