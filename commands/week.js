@@ -13,7 +13,7 @@ function command (args, flags, context) {
 
   if (flags.next) {
     date = addWeeks(date, 1)
-  } else if (flags.last) {
+  } else if (flags.previous) {
     date = subWeeks(date, 1)
   }
 
@@ -50,13 +50,15 @@ const flags = [
     name: 'next',
     alias: 'n',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a week file for the next week'
   },
   {
-    name: 'last',
-    alias: 'l',
+    name: 'previous',
+    alias: 'p',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a week file for the previous week'
   }
 ]
 
@@ -70,6 +72,14 @@ const options = {
     {
       cmd: 'daylog week 52',
       description: 'make a file for a specific week'
+    },
+    {
+      cmd: 'daylog week --next',
+      description: 'make a file for the next week'
+    },
+    {
+      cmd: 'daylog week --previous',
+      description: 'make a file for the previous week'
     }
   ]
 }

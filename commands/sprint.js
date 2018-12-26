@@ -15,7 +15,7 @@ function command (args, flags, context) {
   if (flags.next) {
     sprint = addSprints(sprint, 1)
     date = sprint.start
-  } else if (flags.last) {
+  } else if (flags.previous) {
     sprint = subSprints(sprint, 1)
     date = sprint.start
   }
@@ -52,13 +52,15 @@ const flags = [
     name: 'next',
     alias: 'n',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a sprint file for the next sprint'
   },
   {
-    name: 'last',
-    alias: 'l',
+    name: 'previous',
+    alias: 'p',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a sprint file for the previous sprint'
   }
 ]
 
@@ -72,6 +74,14 @@ const options = {
     {
       cmd: 'daylog sprint 26',
       description: 'make a file for a specific sprint'
+    },
+    {
+      cmd: 'daylog sprint --next',
+      description: 'make a file for the next sprint'
+    },
+    {
+      cmd: 'daylog sprint --previous',
+      description: 'make a file for the previous sprint'
     }
   ]
 }

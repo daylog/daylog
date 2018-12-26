@@ -13,7 +13,7 @@ function command (args, flags, context) {
 
   if (flags.next) {
     date = addMonths(date, 1)
-  } else if (flags.last) {
+  } else if (flags.previous) {
     date = subMonths(date, 1)
   }
 
@@ -49,18 +49,34 @@ const flags = [
     name: 'next',
     alias: 'n',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a month file for the next month'
   },
   {
-    name: 'last',
-    alias: 'l',
+    name: 'previous',
+    alias: 'p',
     type: 'boolean',
-    default: false
+    default: false,
+    description: 'make a month file for the previous month'
   }
 ]
 
 const options = {
-  description: 'create a new file for a month'
+  description: 'create a new file for a month',
+  examples: [
+    {
+      cmd: 'daylog day',
+      description: 'make a file for the current day'
+    },
+    {
+      cmd: 'daylog month --next',
+      description: 'make a file for the next month'
+    },
+    {
+      cmd: 'daylog month --previous',
+      description: 'make a file for the previous month'
+    }
+  ]
 }
 
 module.exports = {
