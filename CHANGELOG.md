@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [v2.2.0] - 2018-12-26
 
 ### Added
-- added `--next` and `--last` flags to day, week, month, quarter, and sprint commands
+- added `--next` and `--previous` flags to day, week, month, quarter, and sprint commands
 
 ## [v2.1.0] - 2018-11-17
 
