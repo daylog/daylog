@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [v2.2.1] - 2018-12-31
 
 ### Fixed
+- make sure day filename is zero-filled
+
+## [v2.2.1] - 2018-12-31
+
+### Fixed
 - better handle date for week, sprint, and quarter near new year.
 - fix typos for month and quarter
 
