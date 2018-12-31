@@ -17,8 +17,14 @@ function command (args, flags, context) {
     date = subQuarters(date, 1)
   }
 
-  const year = getYear(args.year, date)
   const quarter = getQuarter(args.quarter, date)
+
+  let dateForYear = date
+  if (quarter.number === 1) {
+    dateForYear = quarter.end
+  }
+
+  const year = getYear(args.year, date)
 
   const quarterFile = createQuarterFile({ quarter, year })
 

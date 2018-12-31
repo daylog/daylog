@@ -4,8 +4,8 @@ const mkdirp = require('mkdirp')
 
 const getYear = require('../lib/get-year')
 const getSprint = require('../lib/get-sprint')
-const subSprints = require('date-fns/sub_sprints')
-const addSprints = require('date-fns/add_sprints')
+const subSprints = require('../lib/sub-sprints')
+const addSprints = require('../lib/add-sprints')
 const createSprintFile = require('../lib/create-sprint-file')
 
 function command (args, flags, context) {
@@ -20,7 +20,12 @@ function command (args, flags, context) {
     date = sprint.start
   }
 
-  const year = getYear(args.year, date)
+  let dateForYear = date
+  if (sprint.number === 1) {
+    dateForYear = sprint.end
+  }
+
+  const year = getYear(args.year, dateForYear)
 
   const sprintFile = createSprintFile({ sprint, year })
 

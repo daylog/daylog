@@ -16,9 +16,14 @@ function command (args, flags, context) {
   } else if (flags.previous) {
     date = subWeeks(date, 1)
   }
-
-  const year = getYear(args.year, date)
   const week = getWeek(args.week, date)
+
+  let dateForYear = date
+  if (week.number === 1) {
+    dateForYear = week.end
+  }
+
+  const year = getYear(args.year, dateForYear)
 
   const weekFile = createWeekFile({ week, year })
 

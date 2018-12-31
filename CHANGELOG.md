@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - _nothing yet_
 
+## [v2.2.1] - 2018-12-31
+
+### Fixed
+- better handle date for week, sprint, and quarter near new year.
+- fix typos for month and quarter
+
 ## [v2.2.0] - 2018-12-26
 
 ### Added
@@ -49,6 +55,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - initial release with `day`, `month`, `year`, and `today` commands.
 
+[v2.2.1]: https://github.com/daylog/daylog/compare/v2.2.0...v2.2.1
 [v2.2.0]: https://github.com/daylog/daylog/compare/v2.1.0...v2.2.0
 [v2.1.0]: https://github.com/daylog/daylog/compare/v2.0.1...v2.1.0
 [v2.0.1]: https://github.com/daylog/daylog/compare/v2.0.0...v2.0.1
