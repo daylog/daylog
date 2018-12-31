@@ -7,10 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - _nothing yet_
 
-## [v2.2.1] - 2018-12-31
+## [v2.2.2] - 2018-12-31
 
 ### Fixed
 - make sure day filename is zero-filled
+- fix typo in quarter command
 
 ## [v2.2.1] - 2018-12-31
 

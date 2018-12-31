@@ -24,7 +24,7 @@ function command (args, flags, context) {
     dateForYear = quarter.end
   }
 
-  const year = getYear(args.year, date)
+  const year = getYear(args.year, dateForYear)
 
   const quarterFile = createQuarterFile({ quarter, year })
 
