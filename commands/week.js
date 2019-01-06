@@ -28,7 +28,7 @@ function command (args, flags, context) {
   const weekFile = createWeekFile({ week, year })
 
   const weekDirectoryPath = path.join(process.cwd(), year.number, 'weeks')
-  const weekFilepath = path.join(weekDirectoryPath, `${week.number}.md`)
+  const weekFilepath = path.join(weekDirectoryPath, `${week.numberZeroFilled}.md`)
 
   mkdirp.sync(weekDirectoryPath)
 
