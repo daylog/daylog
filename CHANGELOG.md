@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - _nothing yet_
 
+## [v2.2.3] - 2019-02-12
+
+### Fixed
+- use week.numberZeroFilled for week filename
+
 ## [v2.2.2] - 2018-12-31
 
 ### Fixed
