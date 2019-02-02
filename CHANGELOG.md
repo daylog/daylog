@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- _nothing yet_
+- ... 
 
-## [v2.2.3] - 2019-02-12
+## [v3.0.0] - 2019-02-02
+
+### Added
+- JS API for creating files
+- add `daylog now` command that creates the current day, week, sprint, month, quarter, and year file if it does not yet exist
+
+## [v2.2.3] - 2019-01-12
 
 ### Fixed
 - use week.numberZeroFilled for week filename
@@ -66,6 +72,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - initial release with `day`, `month`, `year`, and `today` commands.
 
+[v3.0.0]: https://github.com/daylog/daylog/compare/v2.2.3...v3.0.0
 [v2.2.3]: https://github.com/daylog/daylog/compare/v2.2.2...v2.2.3
 [v2.2.2]: https://github.com/daylog/daylog/compare/v2.2.1...v2.2.2
 [v2.2.1]: https://github.com/daylog/daylog/compare/v2.2.0...v2.2.1

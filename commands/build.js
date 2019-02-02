@@ -1,22 +1,13 @@
-const assert = require('assert')
-const mkdirp = require('mkdirp')
-const pump = require('pump')
-const reader = require('folder-reader')
-
-const transformFiles = require('../lib/transform-files')
-const writeFiles = require('../lib/write-files')
+const build = require('../lib/build')
 
 function command (args, flags, context) {
   const { notesDirectory } = args
   const { format, output } = flags
 
-  assert(output && typeof output === 'string', '--output directory path is required')
-
-  mkdirp(output, (err) => {
-    if (err) return console.error(err)
-    pump(reader(notesDirectory), transformFiles(), writeFiles({ format, output }), (err) => {
-      if (err) console.error(err)
-    })
+  build({ notesDirectory, format, output }, (err) => {
+    if (err) {
+      console.error(err)
+    }
   })
 }
 

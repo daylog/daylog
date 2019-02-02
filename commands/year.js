@@ -1,26 +1,12 @@
-const fs = require('fs')
-const path = require('path')
-const mkdirp = require('mkdirp')
-
-const getYear = require('../lib/get-year')
-const createYearFile = require('../lib/create-year-file')
+const year = require('../lib/year')
+const createFile = require('../lib/create-file')
 
 function command (args, flags, context) {
-  const date = new Date()
-  const year = getYear(args.year, date)
-
-  const yearReadmeFile = createYearFile({ year })
-
-  const yearDirectoryPath = path.join(process.cwd(), year.number)
-  const yearReadmeFilepath = path.join(yearDirectoryPath, 'README.md')
-
-  mkdirp.sync(yearDirectoryPath)
-
-  try {
-    fs.accessSync(yearReadmeFilepath)
-  } catch (e) {
-    fs.writeFileSync(yearReadmeFilepath, yearReadmeFile)
-  }
+  createFile(year({
+    next: flags.next,
+    previous: flags.previous,
+    year: args.year
+  }))
 }
 
 const args = [

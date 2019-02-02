@@ -1,43 +1,14 @@
-const fs = require('fs')
-const path = require('path')
-const mkdirp = require('mkdirp')
-const subDays = require('date-fns/sub_days')
-const addDays = require('date-fns/add_days')
-
-const getDay = require('../lib/get-day')
-const getMonth = require('../lib/get-month')
-const getYear = require('../lib/get-year')
-const createDayFile = require('../lib/create-day-file')
+const day = require('../lib/day')
+const createFile = require('../lib/create-file')
 
 function command (args, flags, context) {
-  let date = new Date()
-
-  if (flags.next) {
-    date = addDays(date, 1)
-  } else if (flags.previous) {
-    date = subDays(date, 1)
-  }
-
-  const day = getDay(args.day, date)
-  const month = getMonth(args.month, date)
-  const year = getYear(args.year, date)
-
-  const dayFile = createDayFile({
-    day,
-    month,
-    year
-  })
-
-  const monthDirectoryPath = path.join(process.cwd(), year.number, month.directoryName)
-  const dayFilepath = path.join(monthDirectoryPath, day.filename)
-
-  mkdirp.sync(monthDirectoryPath)
-
-  try {
-    fs.accessSync(dayFilepath)
-  } catch (e) {
-    fs.writeFileSync(dayFilepath, dayFile)
-  }
+  createFile(day({
+    next: flags.next,
+    previous: flags.previous,
+    day: args.day,
+    month: args.month,
+    year: args.year
+  }))
 }
 
 const args = [

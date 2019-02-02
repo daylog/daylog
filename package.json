@@ -8,6 +8,7 @@
   },
   "scripts": {
     "lint": "standard",
+    "lintfix": "standard --fix",
     "test": "tape tests/*.js",
     "test-lint": "npm test && npm run lint"
   },

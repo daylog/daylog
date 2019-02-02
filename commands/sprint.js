@@ -1,44 +1,13 @@
-const fs = require('fs')
-const path = require('path')
-const mkdirp = require('mkdirp')
-
-const getYear = require('../lib/get-year')
-const getSprint = require('../lib/get-sprint')
-const subSprints = require('../lib/sub-sprints')
-const addSprints = require('../lib/add-sprints')
-const createSprintFile = require('../lib/create-sprint-file')
+const sprint = require('../lib/sprint')
+const createFile = require('../lib/create-file')
 
 function command (args, flags, context) {
-  let date = new Date()
-  let sprint = getSprint(args.sprint, date)
-
-  if (flags.next) {
-    sprint = addSprints(sprint, 1)
-    date = sprint.start
-  } else if (flags.previous) {
-    sprint = subSprints(sprint, 1)
-    date = sprint.start
-  }
-
-  let dateForYear = date
-  if (sprint.number === 1) {
-    dateForYear = sprint.end
-  }
-
-  const year = getYear(args.year, dateForYear)
-
-  const sprintFile = createSprintFile({ sprint, year })
-
-  const sprintDirectoryPath = path.join(process.cwd(), year.number, 'sprints')
-  const sprintFilepath = path.join(sprintDirectoryPath, `${sprint.numberZeroFilled}.md`)
-
-  mkdirp.sync(sprintDirectoryPath)
-
-  try {
-    fs.accessSync(sprintFilepath)
-  } catch (e) {
-    fs.writeFileSync(sprintFilepath, sprintFile)
-  }
+  createFile(sprint({
+    next: flags.next,
+    previous: flags.previous,
+    sprint: args.sprint,
+    year: args.year
+  }))
 }
 
 const args = [
