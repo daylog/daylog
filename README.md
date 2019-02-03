@@ -72,6 +72,9 @@ Subcommands:
                                         project
   daylog day                            create a new file for a day
   daylog month                          create a new file for a month
+  daylog now                            make a file if it doesn't exist for the
+                                        current day, week, sprint, month,
+                                        quarter, & year
   daylog quarter                        create a new file for a quarter
   daylog sprint                         create a new file for a two week sprint
   daylog week                           create a new file for a week of the year
