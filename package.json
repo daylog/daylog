@@ -28,26 +28,26 @@
   },
   "homepage": "https://github.com/daylog/daylog#readme",
   "devDependencies": {
-    "documentation": "^9.1.1",
-    "standard": "^12.0.1",
-    "tape": "^4.9.1"
+    "documentation": "^13.0.2",
+    "standard": "^14.3.4",
+    "tape": "^5.0.1"
   },
   "dependencies": {
     "assert-argument": "^1.1.0",
     "configuration-store": "^1.0.1",
-    "date-fns": "^1.30.1",
-    "directory-command": "^4.1.1",
+    "date-fns": "^2.15.0",
+    "directory-command": "^4.3.1",
     "folder-reader": "^2.0.0",
-    "front-matter": "^3.0.1",
-    "handlebars": "^4.0.12",
-    "mkdirp": "^0.5.1",
-    "months": "^2.0.0",
+    "front-matter": "^4.0.2",
+    "handlebars": "^4.7.6",
+    "mkdirp": "^1.0.4",
+    "months": "^2.1.0",
     "prompts": "^2.3.2",
     "pump": "^3.0.0",
-    "remark": "^10.0.1",
-    "remark-html": "^9.0.0",
-    "through2": "^3.0.0",
-    "unist-util-visit": "^1.4.0",
-    "zero-fill": "^2.2.3"
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0",
+    "through2": "^4.0.2",
+    "unist-util-visit": "^2.0.3",
+    "zero-fill": "^2.2.4"
   }
 }

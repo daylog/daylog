@@ -4,7 +4,23 @@ const readConfig = require('../lib/config/read')
 
 function command (args, flags, context) {
   const { projectDirectory } = args
-  const config = readConfig(projectDirectory)
+
+  let config
+  try {
+    config = readConfig(projectDirectory)
+  } catch (e) {
+    config = {
+      dateFileTypes: {
+        day: true,
+        week: true,
+        sprint: true,
+        month: true,
+        quarter: true,
+        year: true
+      }
+    }
+  }
+
   const daylog = new Daylog()
 
   Object.keys(config.dateFileTypes).forEach((fileType) => {
