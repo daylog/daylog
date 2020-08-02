@@ -1,6 +1,6 @@
 {
   "name": "daylog",
-  "version": "3.0.0",
+  "version": "4.0.0-alpha",
   "description": "write notes daily",
   "main": "index.js",
   "bin": {
@@ -42,6 +42,7 @@
     "handlebars": "^4.0.12",
     "mkdirp": "^0.5.1",
     "months": "^2.0.0",
+    "prompts": "^2.3.2",
     "pump": "^3.0.0",
     "remark": "^10.0.1",
     "remark-html": "^9.0.0",

@@ -1,21 +1,29 @@
-const day = require('../lib/day')
-const week = require('../lib/week')
-const sprint = require('../lib/sprint')
-const month = require('../lib/month')
-const quarter = require('../lib/quarter')
-const year = require('../lib/year')
+const Daylog = require('../index')
 const createFile = require('../lib/create-file')
+const readConfig = require('../lib/config/read')
 
 function command (args, flags, context) {
-  createFile(day({}))
-  createFile(week({}))
-  createFile(sprint({}))
-  createFile(month({}))
-  createFile(quarter({}))
-  createFile(year({}))
+  const { projectDirectory } = args
+  const config = readConfig(projectDirectory)
+  const daylog = new Daylog()
+
+  Object.keys(config.dateFileTypes).forEach((fileType) => {
+    const included = config.dateFileTypes[fileType]
+
+    if (included) {
+      createFile(daylog[fileType]())
+    }
+  })
 }
 
-const args = []
+const args = [
+  {
+    name: 'projectDirectory',
+    type: 'string',
+    default: process.cwd(),
+    description: 'the directory that the .daylog directory will be created in'
+  }
+]
 
 const flags = []
 
@@ -24,7 +32,7 @@ const options = {
   examples: [
     {
       cmd: 'daylog now',
-      description: 'create all current date files'
+      description: 'create all current date files. uses `dateFileType` settings in .daylog/config.json to determine which file to create'
     }
   ]
 }

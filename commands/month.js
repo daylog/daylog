@@ -9,6 +9,7 @@ function command (args, flags, context) {
     year: args.year
   }))
 }
+
 const args = [
   {
     name: 'month'

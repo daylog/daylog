@@ -65,20 +65,27 @@ You'll find a new file at `~/notes/2018/11-november/17.md`, with the current dat
 daylog 
 
 Usage:
-  daylog
+  daylog                                
+
+
+Flags:
+  --version, -v    (boolean) show version of the cli
 
 Subcommands:
-  daylog build                          create an html or json build of a daylog
-                                        project
-  daylog day                            create a new file for a day
-  daylog month                          create a new file for a month
+  daylog year                           create a new file for a year
+  daylog week                           create a new file for a week of the year
+  daylog sprint                         create a new file for a two week sprint
+  daylog quarter                        create a new file for a quarter
   daylog now                            make a file if it doesn't exist for the
                                         current day, week, sprint, month,
                                         quarter, & year
-  daylog quarter                        create a new file for a quarter
-  daylog sprint                         create a new file for a two week sprint
-  daylog week                           create a new file for a week of the year
-  daylog year                           create a new file for a year
+  daylog month                          create a new file for a month
+  daylog day                            create a new file for a day
+  daylog config [command]               Get information about daylog
+                                        configuration
+  daylog config create                  Create a .daylog config directory
+  daylog build                          create an html or json build of a daylog
+                                        project
 
 See help for subcommands:
   daylog [command] --help
