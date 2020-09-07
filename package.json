@@ -35,7 +35,7 @@
   "dependencies": {
     "assert-argument": "^1.1.0",
     "configuration-store": "^1.0.1",
-    "date-fns": "^2.15.0",
+    "date-fns": "^2.16.1",
     "directory-command": "^4.3.1",
     "folder-reader": "^2.0.0",
     "front-matter": "^4.0.2",
