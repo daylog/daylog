@@ -1,2 +1,2 @@
 # Sprint {{ sprint.number }}, {{ year.number }}
-> {{ formatDate sprint.start 'MMM Do' }} - {{ formatDate sprint.end 'MMM Do' }}
+> {{ formatDate sprint.start 'MMM do' }} - {{ formatDate sprint.end 'MMM do' }}
