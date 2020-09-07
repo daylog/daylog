@@ -7,6 +7,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 - ... 
 
+## [v4.0.0] - 2020-09-07
+
+### Added
+- introduce .daylog config folder
+  - add config for choosing which date file types to use, 
+  - move templates directory into .daylog
+- add startMonth and endMonth to quarter template data
+
+### Changed
+- custom templates are now stored in `.daylog/templates` rather than `_templates`
+
 ## [v3.0.0] - 2019-02-02
 
 ### Added
