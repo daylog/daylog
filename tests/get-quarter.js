@@ -1,5 +1,5 @@
-const test = require('tape')
-const getQuarter = require('../lib/get-quarter')
+import test from 'tape'
+import getQuarter from '../lib/get-quarter.js'
 
 test('getQuarter', function (t) {
   const quarter = getQuarter(null, new Date('2019-01-02'))

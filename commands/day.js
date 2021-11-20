@@ -1,5 +1,5 @@
-const day = require('../lib/day')
-const createFile = require('../lib/create-file')
+import day from '../lib/day.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(day({
@@ -46,21 +46,21 @@ const options = {
   description: 'create a new file for a day',
   examples: [
     {
-      cmd: 'daylog day',
+      command: 'daylog day',
       description: 'make a file for the current day'
     },
     {
-      cmd: 'daylog day --next',
+      command: 'daylog day --next',
       description: 'make a file for the next day'
     },
     {
-      cmd: 'daylog day --previous',
+      command: 'daylog day --previous',
       description: 'make a file for the previous day'
     }
   ]
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,

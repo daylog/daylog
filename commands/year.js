@@ -1,5 +1,5 @@
-const year = require('../lib/year')
-const createFile = require('../lib/create-file')
+import year from '../lib/year.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(year({
@@ -22,7 +22,7 @@ const options = {
   description: 'create a new file for a year'
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,

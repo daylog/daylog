@@ -1,5 +1,5 @@
-const test = require('tape')
-const getDay = require('../lib/get-day')
+import test from 'tape'
+import getDay from '../lib/get-day.js'
 
 test('getDay', function (t) {
   const day = getDay(null, new Date('2019-01-01T10:11:00.052Z'))

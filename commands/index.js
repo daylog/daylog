@@ -1,8 +1,13 @@
-const pkg = require('../package.json')
+import { join } from 'desm'
+import { readFile } from 'fs/promises'
 
-function command (args, flags, context) {
+async function command (args, flags, context) {
+  const filepath = join(import.meta.url, '..', 'package.json')
+  const file = await readFile(filepath, 'utf-8')
+  const { version } = JSON.parse(file)
+
   if (flags.version) {
-    console.log(`${pkg.version}`)
+    console.log(`${version}`)
     return process.exit()
   }
 
@@ -18,7 +23,7 @@ const flags = [
   }
 ]
 
-module.exports = {
+export default {
   command,
   flags
 }

@@ -1,15 +1,15 @@
-const build = require('./lib/build')
-const day = require('./lib/day')
-const week = require('./lib/week')
-const sprint = require('./lib/sprint')
-const month = require('./lib/month')
-const quarter = require('./lib/quarter')
-const year = require('./lib/year')
-const createConfig = require('./lib/config/create')
-const readConfig = require('./lib/config/read')
-const configExists = require('./lib/config/exists')
+import build from './lib/build/index.js'
+import day from './lib/day.js'
+import week from './lib/week.js'
+import sprint from './lib/sprint.js'
+import month from './lib/month.js'
+import quarter from './lib/quarter.js'
+import year from './lib/year.js'
+import createConfig from './lib/config/create.js'
+import readConfig from './lib/config/read.js'
+import configExists from './lib/config/exists.js'
 
-class Daylog {
+export default class Daylog {
   constructor (options = {}) {
     this.options = options
   }
@@ -18,8 +18,8 @@ class Daylog {
     return Object.assign({}, this.options, options)
   }
 
-  build (options, callback) {
-    return build(this.assign(options), callback)
+  build (options) {
+    return build(this.assign(options))
   }
 
   async writeConfig (options) {
@@ -61,5 +61,3 @@ class Daylog {
     return year(this.assign(options))
   }
 }
-
-module.exports = Daylog

@@ -1,6 +1,6 @@
-const prompts = require('prompts')
+import prompts from 'prompts'
 
-const createConfig = require('../../lib/config/create')
+import createConfig from '../../lib/config/create.js'
 
 async function command (args, flags, context) {
   const { projectDirectory } = args
@@ -52,7 +52,7 @@ const options = {
   description: 'Create a .daylog config directory'
 }
 
-module.exports = {
+export default {
   command,
   flags: [],
   args,

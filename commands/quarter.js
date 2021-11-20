@@ -1,5 +1,5 @@
-const quarter = require('../lib/quarter')
-const createFile = require('../lib/create-file')
+import quarter from '../lib/quarter.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(quarter({
@@ -41,25 +41,25 @@ const options = {
   description: 'create a new file for a quarter',
   examples: [
     {
-      cmd: 'daylog quarter',
+      command: 'daylog quarter',
       description: 'make a file for the current quarter'
     },
     {
-      cmd: 'daylog quarter spring',
+      command: 'daylog quarter spring',
       description: 'make a file for a specific quarter'
     },
     {
-      cmd: 'daylog quarter --next',
+      command: 'daylog quarter --next',
       description: 'make a file for the next quarter'
     },
     {
-      cmd: 'daylog quarter --previous',
+      command: 'daylog quarter --previous',
       description: 'make a file for the previous quarter'
     }
   ]
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,

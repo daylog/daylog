@@ -1,12 +1,20 @@
 #! /usr/bin/env node
 
-const path = require('path')
-const directoryCommand = require('directory-command')
+import { join } from 'desm'
+import directoryCommand from 'directory-command'
 
-const directory = path.join(__dirname, '..', 'commands')
-const options = {
+const directory = join(import.meta.url, '..', 'commands')
+const config = {
+  directory,
+  argv: process.argv.slice(2),
   commandName: 'daylog',
+  leftColumnWidth: 30,
+  rightColumnWidth: 50,
   context: {}
 }
 
-directoryCommand(directory, process.argv.slice(2), options)
+try {
+  directoryCommand(config)
+} catch (err) {
+  console.error(err)
+}

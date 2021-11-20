@@ -1,5 +1,5 @@
-const test = require('tape')
-const getWeek = require('../lib/get-week')
+import test from 'tape'
+import getWeek from '../lib/get-week.js'
 
 test('getWeek', function (t) {
   const week = getWeek(null, new Date('2019-01-01T10:11:00.052Z'))

@@ -1,5 +1,5 @@
-const test = require('tape')
-const getSprint = require('../lib/get-sprint')
+import test from 'tape'
+import getSprint from '../lib/get-sprint.js'
 
 test('getSprint', function (t) {
   const sprint = getSprint(null, new Date('2019-01-01T10:11:00.052Z'))

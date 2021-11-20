@@ -1,12 +1,9 @@
 # ☀️📝 daylog
 
 [![npm][npm-image]][npm-url]
-[![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
 [![conduct][conduct]][conduct-url]
 
-[travis-image]: https://img.shields.io/travis/com/daylog/daylog.svg?style=flat-square
-[travis-url]: https://travis-ci.com/daylog/daylog
 [npm-image]: https://img.shields.io/npm/v/daylog.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/daylog
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square

@@ -1,5 +1,5 @@
-const month = require('../lib/month')
-const createFile = require('../lib/create-file')
+import month from '../lib/month.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(month({
@@ -41,21 +41,21 @@ const options = {
   description: 'create a new file for a month',
   examples: [
     {
-      cmd: 'daylog month',
+      command: 'daylog month',
       description: 'make a file for the current month'
     },
     {
-      cmd: 'daylog month --next',
+      command: 'daylog month --next',
       description: 'make a file for the next month'
     },
     {
-      cmd: 'daylog month --previous',
+      command: 'daylog month --previous',
       description: 'make a file for the previous month'
     }
   ]
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,

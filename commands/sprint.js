@@ -1,5 +1,5 @@
-const sprint = require('../lib/sprint')
-const createFile = require('../lib/create-file')
+import sprint from '../lib/sprint.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(sprint({
@@ -42,25 +42,25 @@ const options = {
   description: 'create a new file for a two week sprint',
   examples: [
     {
-      cmd: 'daylog sprint',
+      command: 'daylog sprint',
       description: 'make a file for the current sprint'
     },
     {
-      cmd: 'daylog sprint 26',
+      command: 'daylog sprint 26',
       description: 'make a file for a specific sprint'
     },
     {
-      cmd: 'daylog sprint --next',
+      command: 'daylog sprint --next',
       description: 'make a file for the next sprint'
     },
     {
-      cmd: 'daylog sprint --previous',
+      command: 'daylog sprint --previous',
       description: 'make a file for the previous sprint'
     }
   ]
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,

@@ -1,14 +1,10 @@
-const build = require('../lib/build')
+import build from '../lib/build/index.js'
 
-function command (args, flags, context) {
+async function command (args, flags, context) {
   const { notesDirectory } = args
   const { format, output } = flags
 
-  build({ notesDirectory, format, output }, (err) => {
-    if (err) {
-      console.error(err)
-    }
-  })
+  await build({ notesDirectory, format, output })
 }
 
 const args = [
@@ -38,7 +34,7 @@ const options = {
   description: 'create an html or json build of a daylog project'
 }
 
-module.exports = {
+export default {
   command,
   flags,
   args,

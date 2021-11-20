@@ -1,5 +1,5 @@
-const week = require('../lib/week')
-const createFile = require('../lib/create-file')
+import week from '../lib/week.js'
+import createFile from '../lib/create-file.js'
 
 function command (args, flags, context) {
   createFile(week({
@@ -42,25 +42,25 @@ const options = {
   description: 'create a new file for a week of the year',
   examples: [
     {
-      cmd: 'daylog week',
+      command: 'daylog week',
       description: 'make a file for the current week'
     },
     {
-      cmd: 'daylog week 52',
+      command: 'daylog week 52',
       description: 'make a file for a specific week'
     },
     {
-      cmd: 'daylog week --next',
+      command: 'daylog week --next',
       description: 'make a file for the next week'
     },
     {
-      cmd: 'daylog week --previous',
+      command: 'daylog week --previous',
       description: 'make a file for the previous week'
     }
   ]
 }
 
-module.exports = {
+export default {
   command,
   args,
   flags,
