@@ -5,7 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- ... 
+
+### Changed
+- Minimum node version of 14.13.0
 
 ## [v4.0.0] - 2020-09-07
 
@@ -83,6 +85,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - initial release with `day`, `month`, `year`, and `today` commands.
 
+[v4.0.0]: https://github.com/daylog/daylog/compare/v3.0.0...v4.0.0
 [v3.0.0]: https://github.com/daylog/daylog/compare/v2.2.3...v3.0.0
 [v2.2.3]: https://github.com/daylog/daylog/compare/v2.2.2...v2.2.3
 [v2.2.2]: https://github.com/daylog/daylog/compare/v2.2.1...v2.2.2

@@ -9,7 +9,7 @@ import createConfig from './lib/config/create.js'
 import readConfig from './lib/config/read.js'
 import configExists from './lib/config/exists.js'
 
-export default class Daylog {
+export class Daylog {
   constructor (options = {}) {
     this.options = options
   }
