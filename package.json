@@ -32,7 +32,6 @@
   },
   "homepage": "https://github.com/daylog/daylog#readme",
   "devDependencies": {
-    "documentation": "^13.2.5",
     "standard": "^17.0.0",
     "tape": "^5.5.3"
   },
@@ -43,6 +42,7 @@
     "dedent": "^0.7.0",
     "desm": "^1.2.0",
     "directory-command": "^5.0.2",
+    "documentation": "^13.2.5",
     "folder-reader": "^2.0.0",
     "front-matter": "^4.0.2",
     "handlebars": "^4.7.7",
